@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наши работы - РязДетейлинг</title>
+  <meta name="description" content="Фотографии работ РязДетейлинг: результаты полировки, химчистки и комплексного детейлинга автомобилей до и после." />
+  <link rel="preload" as="image" href="assets/hero-car-800w.avif" type="image/avif" media="(max-width: 700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-car.avif" type="image/avif" media="(min-width: 701px)" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="canonical" href="https://ryazdetailing.ru/gallery.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Наши работы — примеры до и после — РязДетейлинг" />
+  <meta property="og:description" content="Фотографии работ РязДетейлинг: результаты полировки, химчистки и комплексного детейлинга автомобилей до и после." />
+  <meta property="og:url" content="https://ryazdetailing.ru/gallery.html" />
+  <meta property="og:image" content="https://ryazdetailing.ru/assets/og-cover.jpg" />
+  <meta property="og:site_name" content="РязДетейлинг" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Наши работы — примеры до и после — РязДетейлинг" />
+  <meta name="twitter:description" content="Фотографии работ РязДетейлинг: результаты полировки, химчистки и комплексного детейлинга автомобилей до и после." />
+  <meta name="twitter:image" content="https://ryazdetailing.ru/assets/og-cover.jpg" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><span>Ряз</span>Детейлинг<small>профессиональная автомойка</small></a>
+    <button class="menu-toggle" type="button" aria-label="Открыть меню">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="about.html">О компании</a>
+      <a class="active" href="gallery.html">Наши работы</a>
+      <a href="reviews.html">Отзывы</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <a class="header-phone" href="tel:+74912990099">+7 (4912) 99-00-99</a>
+    <a class="btn btn-outline" href="booking.html">Записаться</a>
+  </header>
+
+  <main>
+    <section class="gl-hero">
+      <div class="gl-hero-text">
+        <p class="breadcrumbs"><a href="index.html" style="color:var(--muted);text-decoration:none;">Главная</a> / <span style="color:var(--gold);">Наши работы</span></p>
+        <h1>Наши работы</h1>
+        <p>Смотрите примеры наших работ до и после. Мы ценим качество и внимание к деталям.</p>
+      </div>
+    </section>
+
+    <div class="gl-filters">
+      <button class="gl-filter-btn active" data-click='[["filterGallery","all",{"$":"this"}]]'>Все работы</button>
+      <button class="gl-filter-btn" data-click='[["filterGallery","wash",{"$":"this"}]]'>Комплексная мойка</button>
+      <button class="gl-filter-btn" data-click='[["filterGallery","detail",{"$":"this"}]]'>Детейлинг кузова</button>
+      <button class="gl-filter-btn" data-click='[["filterGallery","interior",{"$":"this"}]]'>Химчистка салона</button>
+      <button class="gl-filter-btn" data-click='[["filterGallery","polish",{"$":"this"}]]'>Полировка и защита</button>
+      <button class="gl-filter-btn" data-click='[["filterGallery","wheels",{"$":"this"}]]'>Мойка дисков и шин</button>
+    </div>
+
+    <section class="gl-section">
+      <div class="gl-grid" id="gl-grid">
+
+      </div>
+    </section>
+
+    <div class="gl-cta">
+      <div class="gl-cta-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      </div>
+      <div class="gl-cta-body">
+        <h2>Хотите такой же результат?</h2>
+        <p>Запишитесь на мойку прямо сейчас!</p>
+      </div>
+      <a class="btn btn-primary btn-icon" href="booking.html">Записаться на мойку <span class="icon-calendar" aria-hidden="true"></span></a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="logo" href="index.html"><span>Ряз</span>Детейлинг<small>профессиональная автомойка</small></a>
+      <p>Премиальный уход за автомобилем в Рязани.</p>
+    </div>
+    <div class="footer-social">
+      <h4 aria-level="3">Соц. Сети</h4>
+      <a href="https://vk.com/tvoi_dilller" target="_blank" rel="noopener"><span class="social-icon social-vk" aria-hidden="true">VK</span>VK</a>
+      <a href="https://web.max.ru/" target="_blank" rel="noopener"><span class="social-icon social-max" aria-hidden="true">M</span>MAX</a>
+    </div>
+    <div class="footer-legal">
+      <h4>РязДетейлинг 2026</h4>
+      <button type="button" data-modal="offer">Оферта</button>
+      <button type="button" data-modal="privacy">Политика конфиденциальности</button>
+      <a href="contacts.html">Контакты</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="js/actions.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+</body>
+</html>

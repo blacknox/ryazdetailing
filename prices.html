@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цены - РязДетейлинг</title>
+  <meta name="description" content="Актуальные цены на мойку, полировку, химчистку салона, керамику и PPF. Стоимость зависит от класса и состояния автомобиля." />
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/hero-car-800w.avif" type="image/avif" media="(max-width: 700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-car.avif" type="image/avif" media="(min-width: 701px)" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://ryazdetailing.ru/prices.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Цены на детейлинг и автомойку в Рязани — РязДетейлинг" />
+  <meta property="og:description" content="Актуальные цены на мойку, полировку, химчистку салона, керамику и PPF. Стоимость зависит от класса и состояния автомобиля." />
+  <meta property="og:url" content="https://ryazdetailing.ru/prices.html" />
+  <meta property="og:image" content="https://ryazdetailing.ru/assets/og-cover.jpg" />
+  <meta property="og:site_name" content="РязДетейлинг" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Цены на детейлинг и автомойку в Рязани — РязДетейлинг" />
+  <meta name="twitter:description" content="Актуальные цены на мойку, полировку, химчистку салона, керамику и PPF. Стоимость зависит от класса и состояния автомобиля." />
+  <meta name="twitter:image" content="https://ryazdetailing.ru/assets/og-cover.jpg" />
+</head>
+  <body>
+        <header class="site-header">
+      <a class="logo" href="index.html"><span>Ряз</span>Детейлинг<small>профессиональная автомойка</small></a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню">☰</button>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="services.html">Услуги</a>
+        <a class="active" href="prices.html">Цены</a>
+        <a href="about.html">О компании</a>
+        <a href="gallery.html">Наши работы</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <a class="header-phone" href="tel:+74912990099">+7 (4912) 99-00-99</a>
+      <a class="btn btn-outline" href="booking.html">Записаться</a>
+    </header>
+    <main>
+      <section class="page-hero">
+        <p class="breadcrumbs">Главная / Цены</p>
+        <h1>Цены</h1>
+        <p>Финальная стоимость зависит от класса авто, состояния и выбранной защиты.</p>
+      </section>
+      <section class="section">
+        <div class="price-factors reveal">
+          <h3 aria-level="2">От чего зависит точная цена</h3>
+          <ul>
+            <li>Класс и размер автомобиля (седан, кроссовер, внедорожник)</li>
+            <li>Состояние кузова и салона на момент обращения</li>
+            <li>Объём загрязнений и количество повреждений ЛКП</li>
+            <li>Выбранный тип защитного покрытия</li>
+          </ul>
+        </div>
+        <div class="table-wrap reveal reveal-d2" tabindex="0" role="region" aria-label="Таблица цен (прокручивается по горизонтали)">
+          <table>
+            <thead>
+              <tr>
+                <th>Услуга</th>
+                <th>Что входит</th>
+                <th>Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Комплексная мойка</td>
+                <td>Кузов, диски, арки, коврики, сушка</td>
+                <td>от 1 200 ₽</td>
+              </tr>
+              <tr>
+                <td>Детейлинг кузова</td>
+                <td>Полировка, восстановление блеска</td>
+                <td>от 5 000 ₽</td>
+              </tr>
+              <tr>
+                <td>Химчистка салона</td>
+                <td>Ткань, кожа, пластик, удаление запахов</td>
+                <td>от 3 000 ₽</td>
+              </tr>
+              <tr>
+                <td>Керамическое покрытие</td>
+                <td>Защита кузова от грязи и реагентов</td>
+                <td>от 9 000 ₽</td>
+              </tr>
+              <tr>
+                <td>PPF-пленка</td>
+                <td>Защита зон риска от сколов</td>
+                <td>от 15 000 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section">
+        <div class="price-calc reveal" id="price-calc">
+          <h2>Калькулятор стоимости</h2>
+          <p class="calc-lead">Выберите услугу, класс авто и состояние — получите ориентировочную вилку цены.</p>
+          <div class="calc-grid">
+            <label class="calc-field">
+              <span>Услуга</span>
+              <select id="calc-service" aria-label="Услуга"></select>
+            </label>
+            <label class="calc-field">
+              <span>Класс автомобиля</span>
+              <select id="calc-class" aria-label="Класс автомобиля">
+                <option value="1">Седан / хэтчбек</option>
+                <option value="1.2">Кроссовер</option>
+                <option value="1.4">Внедорожник / минивэн</option>
+              </select>
+            </label>
+            <label class="calc-field">
+              <span>Состояние</span>
+              <select id="calc-cond" aria-label="Состояние автомобиля">
+                <option value="1">Чистый, ухоженный</option>
+                <option value="1.25">Обычное, есть загрязнения</option>
+                <option value="1.5">Сильно загрязнён / есть повреждения ЛКП</option>
+              </select>
+            </label>
+          </div>
+          <div class="calc-result" aria-live="polite">
+            <div class="calc-price" id="calc-price">—</div>
+            <p class="calc-note">Расчёт ориентировочный. Точную стоимость администратор назовёт до начала работ.</p>
+            <a class="btn btn-primary" id="calc-book" href="booking.html">Записаться на эту услугу</a>
+          </div>
+        </div>
+      </section>
+      <section class="cta-section">
+        <div>
+          <h2>Хотите точный расчет?</h2>
+          <p>Оставьте заявку, мы уточним модель авто и состояние покрытия.</p>
+        </div>
+        <a class="btn btn-primary" href="booking.html">Рассчитать и записаться</a>
+      </section>
+    </main>
+        <footer class="site-footer">
+      <div>
+        <a class="logo" href="index.html"><span>Ряз</span>Детейлинг<small>профессиональная автомойка</small></a>
+        <p>Премиальный уход за автомобилем в Рязани.</p>
+      </div>
+      <div class="footer-social">
+        <h4 aria-level="3">Соц. Сети</h4>
+        <a href="https://vk.com/tvoi_dilller" target="_blank" rel="noopener"><span class="social-icon social-vk" aria-hidden="true">VK</span>VK</a>
+        <a href="https://web.max.ru/" target="_blank" rel="noopener"><span class="social-icon social-max" aria-hidden="true">M</span>MAX</a>
+      </div>
+      <div class="footer-legal">
+        <h4>РязДетейлинг 2026</h4>
+        <button type="button" data-modal="offer">Оферта</button>
+        <button type="button" data-modal="privacy">Политика конфиденциальности</button>
+        <a href="contacts.html">Контакты</a>
+      </div>
+    </footer>
+    <script src="script.js">
+    </script>
+    <script src="js/prices.js" defer></script>
+
+  </body>
+</html>

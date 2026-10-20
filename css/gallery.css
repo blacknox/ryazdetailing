@@ -1,0 +1,166 @@
+/* ── HERO ── */
+.gl-hero {
+  min-height: 380px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 max(28px, calc((100vw - var(--max)) / 2));
+  background:
+    linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.78) 50%, rgba(6,9,12,0.15) 100%),
+    url("../assets/hero-car.webp") center right / cover;
+  background:
+    linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.78) 50%, rgba(6,9,12,0.15) 100%),
+    image-set(url("../assets/hero-car.avif") type("image/avif"), url("../assets/hero-car.webp") type("image/webp")) center right / cover;
+  border-bottom: 1px solid var(--line);
+}
+.gl-hero-text { padding: 72px 0; }
+.gl-hero-text .breadcrumbs { margin-bottom: 14px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); }
+.gl-hero-text .breadcrumbs span { color: var(--gold); }
+.gl-hero-text h1 { font-size: clamp(38px, 5vw, 62px); margin-bottom: 18px; }
+.gl-hero-text p { max-width: 440px; color: #cbd2d8; font-size: 15px; line-height: 1.7; }
+
+/* ── FILTER TABS ── */
+.gl-filters {
+  padding: 28px max(28px, calc((100vw - var(--max)) / 2));
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  background: #090d12;
+}
+.gl-filter-btn {
+  padding: 10px 20px;
+  border: 1.5px solid var(--line);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s;
+  white-space: nowrap;
+}
+.gl-filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+.gl-filter-btn.active { background: var(--gold); border-color: var(--gold); color: #000; }
+
+/* ── GRID ── */
+.gl-section {
+  padding: 48px max(28px, calc((100vw - var(--max)) / 2)) 56px;
+}
+.gl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── BEFORE/AFTER CARD ── */
+@keyframes gl-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.gl-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.24s, transform 0.24s, box-shadow 0.24s;
+  animation: gl-in 0.42s ease both;
+}
+.gl-card:hover { border-color: rgba(255,210,30,0.38); transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,0.3); }
+.gl-card.hidden { display: none; }
+
+/* Comparison slider */
+.ba-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ba-after {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.ba-before {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  clip-path: inset(0 50% 0 0);
+  transition: clip-path 0s;
+}
+.ba-label-before, .ba-label-after {
+  position: absolute;
+  top: 12px;
+  padding: 4px 10px;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 3;
+}
+.ba-label-before { left: 12px; }
+.ba-label-after { right: 12px; }
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: var(--gold);
+  transform: translateX(-50%);
+  z-index: 4;
+  pointer-events: none;
+}
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: var(--gold);
+  border-radius: 50%;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+.ba-handle svg { width: 20px; height: 20px; fill: none; stroke: #000; stroke-width: 2.5; stroke-linecap: round; }
+
+/* Card info */
+.gl-card-info { padding: 18px 20px; }
+.gl-card-info h3 { font-size: 15px; margin: 0 0 5px; }
+.gl-card-info .gl-time { font-size: 13px; color: var(--muted); }
+
+/* ── CTA ── */
+.gl-cta {
+  margin: 0 max(28px, calc((100vw - var(--max)) / 2)) 52px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.gl-cta-icon { display: grid; place-items: center; width: 60px; height: 60px; background: rgba(255,210,30,0.1); border: 1px solid rgba(255,210,30,0.3); border-radius: 14px; color: var(--gold); flex-shrink: 0; }
+.gl-cta-icon svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.gl-cta-body { flex: 1; }
+.gl-cta-body h2 { font-size: clamp(18px, 2vw, 26px); margin: 0 0 5px; }
+.gl-cta-body p { margin: 0; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 1050px) { .gl-grid { grid-template-columns: repeat(2, 1fr); } .gl-hero { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .gl-grid { grid-template-columns: 1fr; } .gl-section { padding-left: 18px; padding-right: 18px; } .gl-cta { flex-direction: column; text-align: center; margin-left: 18px; margin-right: 18px; } }
+
+/* Мобильные экраны: уменьшенный фон героя (800w), порог 700px совпадает с media в <link rel="preload"> страницы gallery.html. */
+@media (max-width: 700px) {
+  .gl-hero {
+    background: linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.78) 50%, rgba(6,9,12,0.15) 100%),
+    image-set(url("../assets/hero-car-800w.avif") type("image/avif"), url("../assets/hero-car-800w.webp") type("image/webp")) center right / cover;
+  }
+}

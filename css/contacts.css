@@ -1,0 +1,237 @@
+/* ── Hero ── */
+.contacts-hero {
+  min-height: 380px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 max(28px, calc((100vw - var(--max)) / 2));
+  background:
+    linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.82) 48%, rgba(6,9,12,0.18) 100%),
+    url("../assets/hero-car.webp") center right / cover;
+  background:
+    linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.82) 48%, rgba(6,9,12,0.18) 100%),
+    image-set(url("../assets/hero-car.avif") type("image/avif"), url("../assets/hero-car.webp") type("image/webp")) center right / cover;
+  border-bottom: 1px solid var(--line);
+}
+.contacts-hero-text { padding: 72px 0; }
+.contacts-hero-text .breadcrumbs {
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+}
+.contacts-hero-text .breadcrumbs span { color: var(--gold); }
+.contacts-hero-text h1 { font-size: clamp(42px, 5vw, 68px); margin-bottom: 18px; }
+.contacts-hero-text p { max-width: 440px; color: #cbd2d8; font-size: 16px; line-height: 1.7; }
+
+/* ── Info strip ── */
+.contacts-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #090d12;
+  border-bottom: 1px solid var(--line);
+}
+.contacts-strip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px 32px;
+  border-right: 1px solid var(--line);
+  transition: background 0.22s, transform 0.26s;
+}
+.contacts-strip-item:last-child { border-right: 0; }
+.contacts-strip-item:hover { background: rgba(255,210,30,0.05); }
+.strip-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.strip-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.strip-info h4 { margin: 0 0 6px; font-size: 15px; font-weight: 700; }
+.strip-info p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.55; }
+.strip-info a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.strip-info a:hover { color: var(--gold); }
+.social-links { display: flex; gap: 12px; margin-top: 8px; }
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(255,210,30,0.1);
+  border: 1px solid rgba(255,210,30,0.25);
+  border-radius: 8px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.social-links a:hover { background: rgba(255,210,30,0.2); border-color: var(--gold); }
+
+/* ── Main layout ── */
+.contacts-main {
+  padding: 52px max(28px, calc((100vw - var(--max)) / 2));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* ── Map card ── */
+.map-block h2 { font-size: clamp(24px, 2.5vw, 34px); margin-bottom: 20px; }
+.map-wrap {
+  width: 100%;
+  height: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0e1318;
+  margin-bottom: 18px;
+}
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.btn-route {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: border-color 0.22s, background 0.22s, color 0.22s;
+}
+.btn-route:hover { border-color: var(--gold); background: rgba(255,210,30,0.07); color: var(--gold); }
+.btn-route svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; flex-shrink: 0; }
+
+/* ── Contact form ── */
+.form-block h2 { font-size: clamp(24px, 2.5vw, 34px); margin-bottom: 20px; }
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #0e1318;
+  border: 1.5px solid var(--field-border, #6b7682);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--placeholder, #8a949e); }
+.contact-form input:focus,
+.contact-form textarea:focus { border-color: var(--gold); }
+.contact-form textarea { height: 120px; resize: vertical; }
+.contact-agree {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.contact-agree input { accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; }
+.contact-agree a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(255,210,30,0.35); }
+.btn-send {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 22px;
+  background: var(--gold);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  width: 100%;
+}
+.btn-send:hover { opacity: 0.88; transform: translateY(-2px); }
+.btn-send svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.form-privacy-note { font-size: 12px; color: var(--muted); }
+.form-privacy-note a { color: var(--gold); text-decoration: none; }
+.form-msg { font-size: 13px; color: var(--gold); min-height: 18px; }
+
+/* ── Schedule band ── */
+.schedule-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  margin: 0 max(28px, calc((100vw - var(--max)) / 2)) 52px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.schedule-col {
+  padding: 36px 40px;
+  border-right: 1px solid var(--line);
+}
+.schedule-col:last-child { border-right: 0; padding: 0; overflow: hidden; }
+.schedule-col-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.schedule-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255,210,30,0.1);
+  border: 1px solid rgba(255,210,30,0.3);
+  border-radius: 10px;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.schedule-icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.schedule-col h3 { font-size: 18px; margin-bottom: 6px; }
+.schedule-col .schedule-days { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+.schedule-col .schedule-time { font-size: 36px; font-weight: 900; color: var(--gold); line-height: 1; margin: 8px 0 6px; }
+.schedule-col .schedule-note { color: var(--muted); font-size: 13px; }
+.schedule-col p { color: var(--muted); font-size: 14px; line-height: 1.65; margin-bottom: 20px; }
+
+@media (max-width: 1050px) {
+  .contacts-hero { grid-template-columns: 1fr; }
+  .contacts-strip { grid-template-columns: repeat(2, 1fr); }
+  .contacts-strip-item:nth-child(2) { border-right: 0; }
+  .contacts-main { grid-template-columns: 1fr; }
+  .schedule-band { grid-template-columns: 1fr; margin: 0 18px 40px; }
+  .schedule-col:last-child { display: none; }
+  .schedule-col { border-right: 0; border-bottom: 1px solid var(--line); }
+  .schedule-col:last-child { border-bottom: 0; }
+}
+@media (max-width: 640px) {
+  .contacts-strip { grid-template-columns: 1fr; }
+  .contacts-strip-item { border-right: 0; border-bottom: 1px solid var(--line); }
+  .form-row { grid-template-columns: 1fr; }
+  .contacts-main { padding-left: 18px; padding-right: 18px; }
+}
+
+/* Мобильные экраны: уменьшенный фон героя (800w), порог 700px совпадает с media в <link rel="preload"> страницы contacts.html. */
+@media (max-width: 700px) {
+  .contacts-hero {
+    background: linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.82) 48%, rgba(6,9,12,0.18) 100%),
+    image-set(url("../assets/hero-car-800w.avif") type("image/avif"), url("../assets/hero-car-800w.webp") type("image/webp")) center right / cover;
+  }
+}

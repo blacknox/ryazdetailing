@@ -1,0 +1,198 @@
+/* ── About page overrides ── */
+.about-hero {
+  min-height: 420px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0;
+  padding: 0 max(28px, calc((100vw - var(--max)) / 2));
+  background:
+    linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.85) 45%, rgba(6,9,12,0.2) 100%),
+    url("../assets/hero-car.webp") center right / cover;
+  background:
+    linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.85) 45%, rgba(6,9,12,0.2) 100%),
+    image-set(url("../assets/hero-car.avif") type("image/avif"), url("../assets/hero-car.webp") type("image/webp")) center right / cover;
+  border-bottom: 1px solid var(--line);
+}
+.about-hero-text { padding: 80px 0; }
+.about-hero-text .breadcrumbs { margin-bottom: 12px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gold); }
+.about-hero-text .breadcrumbs span { color: var(--gold); }
+.about-hero-text h1 { font-size: clamp(44px, 6vw, 72px); margin-bottom: 18px; }
+.about-hero-text p { max-width: 480px; color: #cbd2d8; font-size: 17px; margin-bottom: 10px; }
+
+.why-about {
+  padding: 78px max(28px, calc((100vw - var(--max)) / 2));
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.why-about h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 48px; }
+.why-about-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
+}
+.why-about-item { text-align: center; }
+.why-about-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  color: var(--gold);
+}
+.why-about-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.why-about-item h3 { font-size: 15px; margin-bottom: 8px; }
+.why-about-item p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.55; }
+
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+}
+.about-split-photo {
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+}
+.about-split-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-split-photo .photo-label {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text);
+}
+.about-split-photo .photo-label span { color: var(--gold); }
+.about-split-copy {
+  padding: 60px 52px;
+  background: var(--panel);
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-split-copy h2 { font-size: clamp(24px, 2.5vw, 34px); margin-bottom: 6px; }
+.about-split-copy .gold-line {
+  width: 42px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+.about-split-copy p { color: var(--muted); margin-bottom: 14px; line-height: 1.7; }
+
+.stats-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #090d12;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 32px 36px;
+  border-right: 1px solid var(--line);
+  transition: background 0.22s ease;
+}
+.stat-item:last-child { border-right: 0; }
+.stat-item:hover { background: rgba(255,210,30,0.04); }
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.stat-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.stat-item strong { display: block; font-size: 28px; color: var(--gold); line-height: 1; }
+.stat-item small { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+.team-section {
+  padding: 78px max(28px, calc((100vw - var(--max)) / 2));
+  text-align: center;
+}
+.team-section h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 48px; }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+.team-card {
+  background: linear-gradient(180deg, var(--panel), #0c1117);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.26s ease, border-color 0.26s ease, box-shadow 0.26s ease;
+}
+.team-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255,210,30,0.42);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.32);
+}
+.team-card-photo {
+  height: 260px;
+  overflow: hidden;
+}
+.team-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.55s ease;
+}
+.team-card:hover .team-card-photo img { transform: scale(1.05); }
+.team-card-info { padding: 20px 20px 22px; }
+.team-card-info h3 { margin: 0 0 4px; font-size: 18px; }
+.team-card-info .role { color: var(--gold); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 10px; }
+.team-card-info p { color: var(--muted); font-size: 13px; line-height: 1.55; margin: 0; }
+
+@media (max-width: 1050px) {
+  .why-about-grid { grid-template-columns: repeat(3, 1fr); }
+  .about-split, .stats-band { grid-template-columns: 1fr; }
+  .about-split-photo { min-height: 320px; }
+  .about-split-copy { padding: 40px 28px; border-left: 0; border-top: 1px solid var(--line); }
+  .stat-item { border-right: 0; border-bottom: 1px solid var(--line); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-hero { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .why-about-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr; }
+  .about-hero { padding-left: 18px; padding-right: 18px; }
+  .why-about { padding-left: 18px; padding-right: 18px; }
+  .team-section { padding-left: 18px; padding-right: 18px; }
+}
+
+/* Мобильные экраны: уменьшенный фон героя (800w), порог 700px совпадает с media в <link rel="preload"> страницы about.html. */
+@media (max-width: 700px) {
+  .about-hero {
+    background: linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.85) 45%, rgba(6,9,12,0.2) 100%),
+    image-set(url("../assets/hero-car-800w.avif") type("image/avif"), url("../assets/hero-car-800w.webp") type("image/webp")) center right / cover;
+  }
+}

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin-app/
+Disallow: /api/
+Disallow: /service-page.html
+
+Sitemap: https://ryazdetailing.ru/sitemap.xml

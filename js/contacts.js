@@ -5,7 +5,7 @@
       // зашито в HTML при вёрстке, а не то, что реально задано в настройках.
       (async function syncContacts() {
         try {
-          const res = await fetch('/api/settings/contacts');
+          const res = await fetch('https://ryazdetailing-backend.onrender.com/api/settings/contacts');
           const data = res.ok ? await res.json() : null;
           const c = data ? data.value : null;
           if (!c) return;
@@ -119,3 +119,4 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     })
     .finally(() => { if (submitBtn) submitBtn.classList.remove('is-loading'); });
 });
+

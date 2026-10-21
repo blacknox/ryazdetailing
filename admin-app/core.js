@@ -30,7 +30,7 @@ async function apiFetch(path, opts = {}) {
 
   let res;
   try {
-    res = await fetch(API_BASE + path, Object.assign({}, opts, { headers }));
+    res = await fetch(API_BASE + path, Object.assign({}, opts, { headers, credentials: 'include' }));
   } catch (err) {
     throw new Error('Нет связи с сервером');
   }
@@ -273,6 +273,7 @@ async function doLogin(){
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ login: l, password: p }),
+      credentials: 'include',
     });
     const data = await res.json().catch(() => ({}));
 
@@ -462,3 +463,4 @@ function updateBadges(){
   document.getElementById('sb-mc').textContent=nm;
   document.getElementById('ndot').classList.toggle('on',nb+nm>0);
 }
+

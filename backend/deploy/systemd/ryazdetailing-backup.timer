@@ -1,0 +1,11 @@
+[Unit]
+Description=РязДетейлинг: ежедневное резервное копирование
+
+[Timer]
+OnCalendar=*-*-* 04:00:00
+RandomizedDelaySec=300
+# Если сервер был выключен в 04:00 — копия сделается при следующем включении.
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,20 @@
+# Секреты — никогда не коммитить
+.env
+.env.*
+!.env.example
+deploy/backup.env
+*.pem
+*.key
+
+# Данные и загрузки
+data/*.db
+data/*.db-*
+data/*.sqlite*
+uploads/
+backups/
+
+# Зависимости и мусор
+node_modules/
+*.log
+.DS_Store
+coverage/

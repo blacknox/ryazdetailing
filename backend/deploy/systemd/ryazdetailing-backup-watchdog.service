@@ -1,0 +1,8 @@
+[Unit]
+Description=РязДетейлинг: контроль свежести резервной копии
+
+[Service]
+Type=oneshot
+User=__USER__
+WorkingDirectory=__APP_DIR__
+ExecStart=__APP_DIR__/deploy/backup-watchdog.sh

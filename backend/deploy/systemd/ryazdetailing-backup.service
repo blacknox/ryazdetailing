@@ -1,0 +1,14 @@
+[Unit]
+Description=РязДетейлинг: резервное копирование (БД + uploads → шифрование → offsite → retention)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=__USER__
+WorkingDirectory=__APP_DIR__
+ExecStart=__APP_DIR__/deploy/backup-run.sh
+Nice=10
+IOSchedulingClass=idle
+# Если сам запуск не удался (не нашли скрипт и т.п.) — тоже сообщаем.
+ExecStopPost=/bin/sh -c '[ "$SERVICE_RESULT" = "success" ] || __APP_DIR__/deploy/notify.sh "systemd: ryazdetailing-backup завершился со статусом $SERVICE_RESULT"'

@@ -521,7 +521,7 @@ document.addEventListener("keydown", (event) => {
 // ═══════════════════════════════════════════════════════════
 (async function syncServicesFromAPI() {
   try {
-    const API_BASE = '/api';
+    const API_BASE = 'https://ryazdetailing-backend.onrender.com/api';
     const res = await fetch(API_BASE + '/services');
     if (!res.ok) return;
     const data = await res.json();
@@ -657,7 +657,7 @@ document.addEventListener("keydown", (event) => {
 // набора данных приходят с сервера, поэтому их видят все посетители.
 // ═══════════════════════════════════════════════════════════
 (async function syncSettingsFromAPI() {
-  const API_BASE = '/api';
+  const API_BASE = 'https://ryazdetailing-backend.onrender.com/api';
   try {
     const [contactsRes, contentRes] = await Promise.all([
       fetch(`${API_BASE}/settings/contacts`),

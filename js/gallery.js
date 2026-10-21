@@ -1,7 +1,7 @@
 function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 
     // ── API бэкенда ──
-    const API_BASE = '/api';
+    const API_BASE = 'https://ryazdetailing-backend.onrender.com/api';
 
     // ── Переиспользуемая инициализация слайдера "до/после" ──
     function initSlider(wrap) {

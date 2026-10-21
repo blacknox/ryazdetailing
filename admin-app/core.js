@@ -14,7 +14,7 @@ const load=(k,d)=>{try{const v=localStorage.getItem('a_'+k);return v?JSON.parse(
 // Локально (при открытии файла напрямую) укажите полный адрес сервера,
 // например 'http://localhost:3000/api'. На проде, если бэкенд проксируется
 // через Nginx на том же домене (см. README бэкенда), '/api' работает как есть.
-const API_BASE = '/api';
+const API_BASE = 'https://ryazdetailing-backend.onrender.com/api';
 
 // Токен больше не хранится в браузере: сессия лежит в HttpOnly-cookie, которую
 // выставляет сервер, а скрипты страницы её не видят (защита от кражи при XSS).

@@ -2,7 +2,7 @@
       // Локально (при открытии файла напрямую) укажите полный адрес сервера,
       // например 'http://localhost:3000/api'. На проде, если бэкенд проксируется
       // через Nginx на том же домене (см. README бэкенда), '/api' работает как есть.
-      const API_BASE = '/api';
+      const API_BASE = 'https://ryazdetailing-backend.onrender.com/api';
 
       // Extra services toggle
       function toggleExtra() {

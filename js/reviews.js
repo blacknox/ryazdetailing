@@ -1,5 +1,5 @@
 // ── API бэкенда ──
-const API_BASE = '/api';
+const API_BASE = 'https://ryazdetailing-backend.onrender.com/api';
 
 // ── DATA (загружается с сервера) ──
 let allReviews = [];

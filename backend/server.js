@@ -52,8 +52,8 @@ app.use(
       try { allowed = new URL(origin).host === req.headers.host; } catch { allowed = false; }
     }
     callback(null, {
-      origin: allowed ? (origin || false) : false,
-      methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
+            credentials: true,
+       ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
     });
   })
 );
@@ -167,3 +167,5 @@ require('./utils/retention').startRetentionSchedule(require('./db'));
 app.listen(PORT, () => {
   console.log(`[server] РязДетейлинг API запущен на порту ${PORT}`);
 });
+
+

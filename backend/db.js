@@ -304,24 +304,48 @@ seedSettings();
 // --- Сидирование администраторов при первом запуске ---
 const { assertStrongPassword } = require('./utils/startupChecks');
 function seedAdmins() {
-  const count = db.prepare('SELECT COUNT(*) AS n FROM admins').get().n;
-  if (count > 0) return;
-
   const seeds = [
-    { login: process.env.ADMIN_LOGIN, password: process.env.ADMIN_PASSWORD, role: 'admin' },
-    { login: process.env.MANAGER_LOGIN, password: process.env.MANAGER_PASSWORD, role: 'manager' },
+    {
+      login: process.env.ADMIN_LOGIN,
+      password: process.env.ADMIN_PASSWORD,
+      role: 'admin'
+    },
+    {
+      login: process.env.MANAGER_LOGIN,
+      password: process.env.MANAGER_PASSWORD,
+      role: 'manager'
+    }
   ];
 
   const insert = db.prepare(
     'INSERT INTO admins (login, password_hash, role) VALUES (?, ?, ?)'
   );
 
+  const update = db.prepare(
+    'UPDATE admins SET password_hash = ?, role = ?, active = 1 WHERE login = ?'
+  );
+
   for (const s of seeds) {
     if (!s.login || !s.password) continue;
-    assertStrongPassword(s.role === 'admin' ? 'ADMIN_PASSWORD' : 'MANAGER_PASSWORD', s.password);
+
+    assertStrongPassword(
+      s.role === 'admin' ? 'ADMIN_PASSWORD' : 'MANAGER_PASSWORD',
+      s.password
+    );
+
     const hash = bcrypt.hashSync(s.password, 12);
-    insert.run(s.login, hash, s.role);
-    console.log(`[db] Создан администратор: ${s.login} (роль: ${s.role})`);
+
+    const existing = db
+      .prepare('SELECT id FROM admins WHERE login = ?')
+      .get(s.login);
+
+    if (existing) {
+      update.run(hash, s.role, s.login);
+      console.log(`[db] Обновлены данные пользователя: ${s.login}`);
+    } else {
+      insert.run(s.login, hash, s.role);
+      console.log(`[db] Создан пользователь: ${s.login} (${s.role})`);
+    }
   }
 }
 
